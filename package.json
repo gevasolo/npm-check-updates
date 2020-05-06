@@ -30,7 +30,9 @@
   "scripts": {
     "lint": "eslint bin lib",
     "watch": "chokidar \"lib/**/*.js\" -c \"npm run test\"",
-    "test": "npm run lint && mocha && mocha test/individual"
+    "test": "npm run lint && mocha && mocha test/individual",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "bin": {
     "npm-check-updates": "./bin/npm-check-updates",
@@ -62,7 +64,8 @@
     "semver": "^5.3.0",
     "semver-utils": "^1.1.1",
     "spawn-please": "^0.2.0",
-    "update-notifier": "^1.0.2"
+    "update-notifier": "^1.0.2",
+    "snyk": "^1.319.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -76,5 +79,6 @@
   "files": [
     "bin",
     "lib"
-  ]
+  ],
+  "snyk": true
 }
